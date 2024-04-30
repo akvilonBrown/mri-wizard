@@ -1,7 +1,7 @@
 # Surface Area benchmark
 To test how the theoretical surface area and volume correspond to figures calculated with known algorithms, we created a few primitive 3D figures, the surface area and volume of which can be derived from predefined basic properties, like radius for a sphere or radius and height for the cylinder.
 
-![#D primitives](/primitives/primitives.PNG)
+![#D primitives](./primitives/primitives.PNG)
 
 
 ## Sphere
