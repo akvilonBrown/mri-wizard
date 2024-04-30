@@ -1,0 +1,69 @@
+general:
+  random_seed: 42
+  
+data:
+  pre: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented"
+  config_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/datalist_probe.xlsx"
+  saved_folder_separated: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_separated/"
+  config_file_separated: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_separated/datalist_separated.csv"
+  analysis_initial_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_separated/analysis_initial.csv"
+  save_folder_results: True  # saving short summary in each folder
+  save_folder_results_file: "summary.csv"
+  pca_firt_target:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_first/data"
+  pca_first_debug_folder:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_first/debug"
+  pca_first_datalist_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_first/datalist_pca_first.csv"
+  rotation_detected_file:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv"
+  config_file_separated_pca_final: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv" # specify zero length "" if equal to rotation_detected_file
+  pca_final_target:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/data"
+  pca_final_debug_folder:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/debug"
+  pca_final_datalist_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/datalist_pca_final.csv"
+  crease_depth_topfolder: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/debug"  # specify zero length "" if equal to pca_final_debug_folder 
+  crease_depth_targetfolder: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/crease"
+  crease_depth_config_file:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/datalist_pca_final.csv" # specify zero length "" if equal to pca_final_datalist_file
+  crease_depth_result_file:  "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" 
+  analysis_bbox_topfolder: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/data"  # specify zero length "" if equal to pca_final_target
+  analysis_bbox_config_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" # specify zero length "" if equal to crease_depth_result_file
+  analysis_bbox_result_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/_aligned/analysis_lwd.csv"
+  result_file: "../../../../../filer-5/user/plutenko/nmr_data/test_postprocessing/segmented/analysis/analysis_final.xlsx"
+  strip_pericarp: True # whether to remove pericarp on initial stages
+  include_pericarp: False  # analysing separated samples with or without pericarp
+  resolution: 0.04
+
+logging:
+  level: "DEBUG" 
+
+settings:
+  separation:  
+    input_dim0: 250
+    input_dim1: 180
+    input_dim2: 180
+    im_min:  0.0
+    dev_threshold: 0.2
+    nmclosing_default: 0
+    nmclosing_alter: 30
+    inertia_threshold: 0.05
+    bestnum: 3 # set the number of instances in the image if known (preferable),  set 0 when it should be determined by algorithm
+
+    rescale:
+        required: False
+        range: [0,32000]   
+  pca_first:
+    debug: True # saves images of central slice, required for further analysys and final alignment(roll)
+    dochecks: False # checks for mirroring and ebryo positioning and rectifies it, not required when final roll is performed afterfards
+  rotation_detection:
+    batch_size: 16
+    num_workers: 5
+    model_name: "../../wheat_align_pca/rotation_net_sine/outputs/2023-02-28/11-19-38/saved_models/best_model.pt" 
+    model:
+      in_channels: 1
+      outputs: 2
+      dimensions: 2
+      n_blocks: [2,2,2,2]
+      channels: [16, 32, 64, 128]
+  pca_final:
+    debug: True # saves images of central slice, required for further analysys and final alignment(roll)
+    dochecks: True # checks for mirroring and ebryo positioning and rectifies it, not required when final roll is performed afterfards 
+  crease_depth:
+    draw_value: 230 # the grayscale value of crease depth line on illustration
+    morphology_value: 100 # value for morphological operations (removing stray pixels holes, increase if the crease is detected on the side cavities)
+    morphology_value_reduction: 10 # reduction step for  morphology_value when it is too high      
