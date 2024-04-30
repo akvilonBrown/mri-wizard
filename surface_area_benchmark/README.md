@@ -1,26 +1,26 @@
 # Surface Area benchmark
 To test how the theoretical surface area and volume correspond to figures calculated with known algorithms, we created a few primitive 3D figures, the surface area and volume of which can be derived from predefined basic properties, like radius for a sphere or radius and height for the cylinder.
 
-![#D primitives](/primitives/primitives.png)
+![#D primitives](/primitives/primitives.PNG)
 
 
 ## Sphere
 
 The sphere surface area is calculated by formula
-$$ A = 4\pi r^2 $$
+$$A = 4\pi r^2$$
 
 The volume is calculated bz formula
-$$  V = \frac{4}{3}\pi r^3 $$
+$$V = \frac{4}{3}\pi r^3$$
 
 
 
 ## Cylinder
 
 The sphere surface area is calculated by formula
-$$ A = 2\pi rh + 2\pi r^2 $$
+$$A = 2\pi rh + 2\pi r^2$$
 
 The volume is calculated by formula
-$$  V = \pi r^2  h $$
+$$V = \pi r^2  h$$
 
 
 ## Cylindroid
@@ -28,23 +28,23 @@ A cylindrycal object consisting from cylinder and semispheres on tops.
 The surface area of such figure is the surface area of the cylinder without top parts(2πrh) and surface area of the sphere, 
 added to tops.
 The sphere surface area is calculated by formula
-$$ A_{sphere} = 4\pi r^2 $$
+$$A_{sphere} = 4\pi r^2$$
 
 The surface area of cylinder without its toppings is found by formula
-$$ A_{tube} = 2\pi rh $$
+$$A_{tube} = 2\pi rh$$
 
 So the total surface area is calculated as:
-$$ A = 4\pi r^2  + 2\pi rh $$
+$$A = 4\pi r^2  + 2\pi rh$$
 
 
 The sphere volume is calculated by formula
-$$ V_{sphere} = \frac{4}{3}\pi r^3 $$
+$$V_{sphere} = \frac{4}{3}\pi r^3$$
 
 The volume of cylinder is found by formula
-$$ A_{tube} = \pi r^2 h $$
+$$A_{tube} = \pi r^2 h$$
 
 So the total surface area is calculated as:
-$$ V = \frac{4}{3}\pi r^3  + \pi r^2 h $$
+$$V = \frac{4}{3}\pi r^3  + \pi r^2 h$$
 
 
 ## Results
