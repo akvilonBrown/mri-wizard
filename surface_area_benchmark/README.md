@@ -6,20 +6,20 @@ To test how the theoretical surface area and volume correspond to figures calcul
 
 ## Sphere
 
-The sphere surface area is calculated by formula
+The sphere surface area is calculated by the formula
 $$A = 4\pi r^2$$
 
-The volume is calculated bz formula
+The volume is calculated by the formula
 $$V = \frac{4}{3}\pi r^3$$
 
 
 
 ## Cylinder
 
-The sphere surface area is calculated by formula
+The sphere surface area is calculated by the formula
 $$A = 2\pi rh + 2\pi r^2$$
 
-The volume is calculated by formula
+The volume is calculated by the formula
 $$V = \pi r^2  h$$
 
 
@@ -27,20 +27,20 @@ $$V = \pi r^2  h$$
 A cylindrycal object consisting from cylinder and semispheres on tops.
 The surface area of such figure is the surface area of the cylinder without top parts(2πrh) and surface area of the sphere, 
 added to tops.
-The sphere surface area is calculated by formula
+The sphere surface area is calculated by the formula
 $$A_{sphere} = 4\pi r^2$$
 
-The surface area of cylinder without its toppings is found by formula
+The surface area of cylinder without its toppings is found by the formula
 $$A_{tube} = 2\pi rh$$
 
 So the total surface area is calculated as:
 $$A = 4\pi r^2  + 2\pi rh$$
 
 
-The sphere volume is calculated by formula
+The sphere volume is calculated by the formula
 $$V_{sphere} = \frac{4}{3}\pi r^3$$
 
-The volume of cylinder is found by formula
+The volume of cylinder is found by the formula
 $$A_{tube} = \pi r^2 h$$
 
 So the total surface area is calculated as:
