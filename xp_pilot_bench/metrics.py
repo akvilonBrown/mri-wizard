@@ -76,7 +76,7 @@ def main(cfg : DictConfig) -> None:
     if model_name.startswith(('.', '..')):
         model_name = os.path.join(cwd, model_name)
     log.info(model_name)
-    model_weights = torch.load(model_name)    
+    model_weights = torch.load(model_name, map_location = device)    
     model_restored.load_state_dict(model_weights)
 
     transforms_test = Compose([
