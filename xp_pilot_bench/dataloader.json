@@ -26,13 +26,13 @@
         {"source": "wheat_021_0000.nii.gz", "label": "wheat_021_label.nii.gz" , "range": [1, 506], "split": "validation", "transpose":0, "use":1}  
     ],
     "test": [
-        {"source": "source/Flair_Samen01_10_30_15_raw_b_adjusted.nii.gz", "label": "label/Flair_Samen01_10_30_15_label.nii.gz" , "range": [1, 269], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Nirvana_Samen01_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Nirvana_Samen01_06_06_06_label.nii.gz" , "range": [1, 217], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Nirvana_Samen02_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Nirvana_Samen02_06_06_06_label.nii.gz" , "range": [1, 223], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Prinz_Samen01_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Prinz_Samen01_06_06_06_label.nii.gz" , "range": [1, 271], "split": "test", "transpose":0, "use":1},        
-        {"source": "source/Prinz_Samen02_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Prinz_Samen02_06_06_06_label.nii.gz" , "range": [1, 261], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Toras_Samen01_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Toras_Samen01_06_06_06_label.nii.gz" , "range": [1, 283], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Toras_Samen02_10_10_10_raw_b_adjusted.nii.gz", "label": "label/Toras_Samen02_10_10_10_label.nii.gz" , "range": [1, 223], "split": "test", "transpose":0, "use":1},
-        {"source": "source/Welford_Samen02_06_06_06_raw_b_adjusted.nii.gz", "label": "label/Welford_Samen02_06_06_06_label.nii.gz" , "range": [1, 261], "split": "test", "transpose":0, "use":1}    
+        {"source": "source/test_sample01_0000.nii.gz", "label": "label/test_sample01.nii.gz" , "range": [1, 269], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample02_0000.nii.gz", "label": "label/test_sample02.nii.gz" , "range": [1, 217], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample03_0000.nii.gz", "label": "label/test_sample03.nii.gz" , "range": [1, 223], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample04_0000.nii.gz", "label": "label/test_sample04.nii.gz" , "range": [1, 271], "split": "test", "transpose":0, "use":1},        
+        {"source": "source/test_sample05_0000.nii.gz", "label": "label/test_sample05.nii.gz" , "range": [1, 261], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample06_0000.nii.gz", "label": "label/test_sample06.nii.gz" , "range": [1, 283], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample07_0000.nii.gz", "label": "label/test_sample07.nii.gz" , "range": [1, 223], "split": "test", "transpose":0, "use":1},
+        {"source": "source/test_sample08_0000.nii.gz", "label": "label/test_sample08.nii.gz" , "range": [1, 261], "split": "test", "transpose":0, "use":1}     
     ]    
   }

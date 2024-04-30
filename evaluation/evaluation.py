@@ -27,8 +27,8 @@ def load_set(pred_path, prediction_filenames):
 
 
 def main():
-    folder_gt = "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/test/label_renamed"    
-    folder_predictions = "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/prediction_nnunet"
+    folder_gt = "../data/demo_data_for_2D_models/test/label"    
+    folder_predictions = "../data/demo_data_for_2D_models/prediction_nnunet"
     save_file = "evaluation.xlsx"
     file_names = sorted(os.listdir(folder_gt))
     print(f"File names: {file_names}") # must match those in the prediction folder

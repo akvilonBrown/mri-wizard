@@ -2,8 +2,8 @@ general:
   random_seed: 42
   
 data:
-  pre: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata"
-  config_file: "dataloader.json"
+  pre: "../data/demo_data_for_2D_models"
+  config_file: "../data/demo_data_for_2D_models/dataloader.json"
   saved_models_folder: "saved_models"
   output_nii: "test_volume.nii"
   metrics_file: "metrics.csv"
@@ -29,5 +29,5 @@ restore:
 
 inference:
   model_name: './outputs/2024-04-11_train/16-57-33/saved_models/best_model.pt'
-  pickup_folder: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/test/source"
-  save_folder: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/prediction_stacked_model"
+  pickup_folder: "../data/demo_data_for_2D_models/test/source"
+  save_folder: "../data/demo_data_for_2D_models/prediction_stacked_model"
