@@ -1,0 +1,6 @@
+,IoU,Dice
+1 embryo,0.791,0.8833
+2 endosperm,0.9493,0.974
+3 aleuron,0.6679,0.8009
+4 pericarp,0.6325,0.7749
+mean,0.7602,0.8583

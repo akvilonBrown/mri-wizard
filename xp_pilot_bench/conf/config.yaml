@@ -1,0 +1,32 @@
+general:
+  random_seed: 42
+  
+data:
+  pre: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata"
+  config_file: "dataloader.json"
+  saved_models_folder: "saved_models"
+  output_nii: "test_volume.nii"
+  metrics_file: "metrics.csv"
+  normalization: "mean"
+  
+train:
+  batch_size: 64
+  saving_milestone: 5
+  lr: 0.0002
+  up_lr: 0.0008
+  num_epochs: 100
+  notebook: False
+  losses_file: "losses.csv"
+  lr_rates_file: "lr_rates.csv"
+  savefig_png: "rate.png"
+  savefig_pdf: "rate.pdf" 
+  savefig_png2: "rate2.png"
+  savefig_pdf2: "rate2.pdf"
+  
+restore:
+  model_name: 'saved_models/best_model.pt'
+
+inference:
+  model_name: './outputs/2024-04-10/12-19-33-trained/saved_models/best_model.pt'
+  pickup_folder: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/test/source"
+  save_folder: "../../../../filer-5/user/plutenko/nmr_data/Task504_tempdata/prediction_pilot_model" 
