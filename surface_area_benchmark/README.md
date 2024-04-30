@@ -54,8 +54,8 @@ In real conditions we multiply linear values by resolution, area values - by res
 For example, when in units radius is 10, surface area found is 1372.04 and volume is 4169 then with resolution 0.1 mm the real word values will be the following
 $$radius = 10 \cdot  0.1 = 1 mm$$ 
 $$surface = 1372.04 \cdot  0.1^2 = 13.72 mm^2$$  
-$$volume = 4169 \cdot 0.1^2 = 4.169 mm^3$$
-
+$$volume = 4169 \cdot 0.1^3 = 4.169 mm^3$$
+(the relative errors in volume estimation therefore remain the same)
 
 Overall, we see that surface area, calculated by *scikit-image* package, tends to overestimate the area by up to 9-10%. It can be attributed to the fact that isosurface, obtained by the Marching Cubes algorithm, is drawn over the tips of protruding segmented voxels covering some additional volume. However, with more extensive tests using different volumes, shapes, and resolutions, this bias can be evaluated more precisely and substracted from the surface area measurements.
 
