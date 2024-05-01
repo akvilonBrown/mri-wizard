@@ -18,7 +18,8 @@ In postprocessing another neural network was involved for determining the final 
 The folder **surface_area_benchmark** contains code that compares the accuracy of surface area calculation in 3D figures with predefined area and volume.
 
 The **data** folder is created for the demo data that can be downloaded and unpacked after cloning this repository on the local computer.
-The folder **dataloader_nmr**, **inference**, **models**, **trainer** are local packages providing classes and utilities for the rest of scripts.
+
+The folders **dataloader_nmr**, **inference**, **models**, **trainer** are local packages providing classes and utilities for the rest of scripts.
 
 ## Installation
 
