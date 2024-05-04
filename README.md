@@ -33,3 +33,4 @@ pip install -e .
 ```
 The last command is required for local dependencies to work across project folders and subfolders (if you preferred conda, you have to use *pip install -e* anyway whithin virtual environment to make local packages available).
 Jupyter Notebook is optional, it is not required as all scripts can be run in a console.
+*nnUnet* can be installed in the same environment, it requires only *Pytorch* as a dependency, which is present in *MRI Wizard* dependencies.
