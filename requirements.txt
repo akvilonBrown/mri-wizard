@@ -12,3 +12,4 @@ setuptools
 tqdm
 tabulate
 monai
+openpyxl
