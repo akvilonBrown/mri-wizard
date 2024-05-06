@@ -53,7 +53,7 @@ settings:
   rotation_detection:
     batch_size: 16
     num_workers: 5
-    model_name: "../../wheat_align_pca/rotation_net_sine/outputs/2023-02-28/11-19-38/saved_models/best_model.pt" 
+    model_name: "../../rotation_detect/outputs/2023-02-28-checkpoint/11-19-38/saved_models/best_model.pt" 
     model:
       in_channels: 1
       outputs: 2
