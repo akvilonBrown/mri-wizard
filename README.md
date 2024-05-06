@@ -1,4 +1,4 @@
-# mri-wizard
+# MRI Wizard for seeds
 This repository contains models involved for initial development of grain segmentaion project, as well as postprocessing scripts and some benchmarks.
 The demo data and the main segmentation model should be [downloaded separately](https://ipk-cloud.ipk-gatersleben.de/s/5exapoJ7dbnzcTf), if required.
 
@@ -14,6 +14,8 @@ The folder **evaluation** contains script to compare segmented images with groun
 The folder **wheat_postprocessing** contains script for analazing segmented data. They should be launched one by one in a sequence, guided by configuration in the Hydra file.
 Demo data is also available. It can used with a starting files only, but also contains all intermediate files produced by each script for overview. 
 In postprocessing another neural network was involved for determining the final rotation of seed sample. To show how it was developed and how it works, the respective code was placed in the folder rotation_detect (demo data available as well).
+
+The folder **wheat_preprocessing** contains script to prepare NMR image for *nnUnet* inference. 
 
 The folder **surface_area_benchmark** contains code that compares the accuracy of surface area calculation in 3D figures with predefined area and volume.
 
