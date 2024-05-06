@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import nibabel as nib
 
-from dataloader_nmr import Compose, MoveAxis, TwoDimDataSet
+from dataloader_nmr import Compose, MoveAxis, MultiDataSet
 from torch.utils.data import DataLoader
 
 import models
