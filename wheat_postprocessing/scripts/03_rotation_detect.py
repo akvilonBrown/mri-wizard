@@ -37,7 +37,7 @@ def main(cfg : DictConfig) -> None:
     num_workers = cfg.settings.rotation_detection.num_workers
     if num_workers == 0 or num_workers > len(os.sched_getaffinity(0)):
        num_workers = len(os.sched_getaffinity(0))
-       logger.info(f"num_workers was adjusted to the available cpu count. Count from config file: {cfg.settings.rotation_detection.num_worker}")
+       logger.info(f"num_workers was adjusted to the available cpu count. Count from config file: {cfg.settings.rotation_detection.num_workers}")
 
     cwd = hydra.utils.get_original_cwd()
     paths =  dataloader_nmr.handle_relative_path(cwd, 
