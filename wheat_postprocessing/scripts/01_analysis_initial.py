@@ -145,7 +145,7 @@ cols = [
 ]
 
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
     topfolder = cfg.data.saved_folder_separated  
     config_file_separated = cfg.data.config_file_separated

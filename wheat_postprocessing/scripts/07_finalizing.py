@@ -8,7 +8,7 @@ import pandas as pd
 
 logger = logging.getLogger(__name__)
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
     analysis_initial_file = cfg.data.analysis_initial_file
     analysis_bbox_result_file = cfg.data.analysis_bbox_result_file

@@ -30,7 +30,7 @@ def get_bbox(pre, label_name, morphology_pix = 50):
     return rp['bbox-3'][0]-rp['bbox-0'][0], rp['bbox-4'][0]-rp['bbox-1'][0], rp['bbox-5'][0]-rp['bbox-2'][0] 
 
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
     analysis_bbox_topfolder = cfg.data.analysis_bbox_topfolder  
     if len(analysis_bbox_topfolder) == 0:

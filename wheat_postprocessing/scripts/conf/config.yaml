@@ -1,3 +1,7 @@
+hydra:
+  job:
+    chdir: True
+    
 general:
   random_seed: 42
   

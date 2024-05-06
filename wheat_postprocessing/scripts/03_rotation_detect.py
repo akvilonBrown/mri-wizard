@@ -25,7 +25,7 @@ def load_files(filenames, datafolder, shape = (180, 180)):
 logger = logging.getLogger(__name__)
 
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
 
     pca_first_datalist_file = cfg.data.pca_first_datalist_file  

@@ -11,7 +11,7 @@ from skimage import io, measure, morphology
 logger = logging.getLogger(__name__)
 
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
 
     crease_depth_topfolder = cfg.data.crease_depth_topfolder

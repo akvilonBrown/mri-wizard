@@ -116,7 +116,7 @@ def segment_deviate(lbls):
     
     return lb_enumsnp.std()
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
 
     inst_shape = (cfg.settings.separation.input_dim0, cfg.settings.separation.input_dim1, cfg.settings.separation.input_dim2) 

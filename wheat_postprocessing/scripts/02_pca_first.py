@@ -67,7 +67,7 @@ def is_embryo_location_right(array):
     argw = np.argwhere(embr)
     return argw[:, 0].mean() > embr.shape[0]//2
 
-@hydra.main(config_path="conf", config_name="config")
+@hydra.main(config_path="conf", config_name="config", version_base="1.1")
 def main(cfg : DictConfig) -> None:
     config_file_separated = cfg.data.config_file_separated
     #analysis_initial_file = cfg.data.analysis_initial_file 
