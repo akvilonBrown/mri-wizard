@@ -103,7 +103,8 @@ def main(cfg : DictConfig) -> None:
         predictions = inference.predict_batch(model_restored, dataloader_test, device, )    
         ni_img = nib.Nifti1Image(predictions, affine=np.eye(4))
         ni_img.header['pixdim'] = header['pixdim']
-        save_path = os.path.join(target_path, file)
+        file_save = file.replace("_0000.", ".") # if the source file has nnUnet naming convention - remove zeros
+        save_path = os.path.join(target_path, file_save)
         nib.save(ni_img, save_path)
     
 
