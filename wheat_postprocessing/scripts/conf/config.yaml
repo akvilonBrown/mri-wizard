@@ -2,29 +2,29 @@ general:
   random_seed: 42
   
 data:
-  pre: "../data/segmented_probes"
-  config_file: "../data/segmented_probes/datalist_probe.xlsx"
-  saved_folder_separated: "../data/segmented_probes/analysis/_separated/"
-  config_file_separated: "../data/segmented_probes/analysis/_separated/datalist_separated.csv"
-  analysis_initial_file: "../data/segmented_probes/analysis/_separated/analysis_initial.csv"
+  pre: "../../data/segmented_probes"
+  config_file: "../../data/segmented_probes/datalist_probe.xlsx"
+  saved_folder_separated: "../../data/segmented_probes/analysis/_separated/"
+  config_file_separated: "../../data/segmented_probes/analysis/_separated/datalist_separated.csv"
+  analysis_initial_file: "../../data/segmented_probes/analysis/_separated/analysis_initial.csv"
   save_folder_results: True  # saving short summary in each folder
   save_folder_results_file: "summary.csv"
-  pca_firt_target:  "../data/segmented_probes/analysis/_aligned/pca_first/data"
-  pca_first_debug_folder:  "../data/segmented_probes/analysis/_aligned/pca_first/debug"
-  pca_first_datalist_file: "../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_first.csv"
-  rotation_detected_file:  "../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv"
-  config_file_separated_pca_final: "../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv" # specify zero length "" if equal to rotation_detected_file
-  pca_final_target:  "../data/segmented_probes/analysis/_aligned/pca_final/data"
-  pca_final_debug_folder:  "../data/segmented_probes/analysis/_aligned/pca_final/debug"
-  pca_final_datalist_file: "../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final.csv"
-  crease_depth_topfolder: "../data/segmented_probes/analysis/_aligned/pca_final/debug"  # specify zero length "" if equal to pca_final_debug_folder 
-  crease_depth_targetfolder: "../data/segmented_probes/analysis/_aligned/pca_final/crease"
-  crease_depth_config_file:  "../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final.csv" # specify zero length "" if equal to pca_final_datalist_file
-  crease_depth_result_file:  "../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" 
-  analysis_bbox_topfolder: "../data/segmented_probes/analysis/_aligned/pca_final/data"  # specify zero length "" if equal to pca_final_target
-  analysis_bbox_config_file: "../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" # specify zero length "" if equal to crease_depth_result_file
-  analysis_bbox_result_file: "../data/segmented_probes/analysis/_aligned/analysis_lwd.csv"
-  result_file: "../data/segmented_probes/analysis/analysis_final.xlsx"
+  pca_firt_target:  "../../data/segmented_probes/analysis/_aligned/pca_first/data"
+  pca_first_debug_folder:  "../../data/segmented_probes/analysis/_aligned/pca_first/debug"
+  pca_first_datalist_file: "../../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_first.csv"
+  rotation_detected_file:  "../../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv"
+  config_file_separated_pca_final: "../../data/segmented_probes/analysis/_aligned/pca_first/datalist_pca_with_roll_detected.csv" # specify zero length "" if equal to rotation_detected_file
+  pca_final_target:  "../../data/segmented_probes/analysis/_aligned/pca_final/data"
+  pca_final_debug_folder:  "../../data/segmented_probes/analysis/_aligned/pca_final/debug"
+  pca_final_datalist_file: "../../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final.csv"
+  crease_depth_topfolder: "../../data/segmented_probes/analysis/_aligned/pca_final/debug"  # specify zero length "" if equal to pca_final_debug_folder 
+  crease_depth_targetfolder: "../../data/segmented_probes/analysis/_aligned/pca_final/crease"
+  crease_depth_config_file:  "../../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final.csv" # specify zero length "" if equal to pca_final_datalist_file
+  crease_depth_result_file:  "../../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" 
+  analysis_bbox_topfolder: "../../data/segmented_probes/analysis/_aligned/pca_final/data"  # specify zero length "" if equal to pca_final_target
+  analysis_bbox_config_file: "../../data/segmented_probes/analysis/_aligned/pca_final/datalist_pca_final_cd.csv" # specify zero length "" if equal to crease_depth_result_file
+  analysis_bbox_result_file: "../../data/segmented_probes/analysis/_aligned/analysis_lwd.csv"
+  result_file: "../../data/segmented_probes/analysis/analysis_final.xlsx"
   strip_pericarp: True # whether to remove pericarp on initial stages
   include_pericarp: False  # analysing separated samples with or without pericarp
   resolution: 0.04
