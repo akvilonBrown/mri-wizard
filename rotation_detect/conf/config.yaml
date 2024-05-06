@@ -2,8 +2,8 @@ general:
   random_seed: 42
   
 data:
-  dataset_folder: "../data/demo_data_for_2D_models/rotation_detect_data/rotation_dataset"
-  dataframe_folder: "../data/demo_data_for_2D_models/rotation_detect_data/data_full.csv"
+  dataset_folder: "../data/rotation_detect_data/rotation_dataset"
+  dataframe_folder: "../data/rotation_detect_data/data_full.csv"
   saved_models_folder: "saved_models"
 
   
