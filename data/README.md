@@ -4,6 +4,7 @@ Placeholder for the demo data (should be downloaded separately, check [**data** 
 The archive contains data for different models in this project, it's optional to select only those subfolder which you are actually going to use.
 After unpacking the structure of this folder should look the following (not mandatory, but it fits the paths in configuration paths in other parts of the project)
 
+
 data
 ├── demo_data_for_2D_models
 │   ├── prediction_nnunet
