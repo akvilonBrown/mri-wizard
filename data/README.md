@@ -44,17 +44,17 @@ data
             └── probe3
 ```
 
-In the **demo_data_for_2D_models** folder, there is training, test, and validation data for 2D and 2.5D models (described in the *dataloader.json* file used and additional config for models). Training data consists of 18 NMR images from the middle stage of the project. The predictionXX folders are empty - they are placeholders where you can forward the output of the models in the inference mode (script *predict.py in the respective project folders*) in order to use this data for evaluation.
+In the **demo_data_for_2D_models** folder, there is training, test, and validation data for 2D and 2.5D models (described in the *dataloader.json* file used and additional config for models). Training data consists of 18 NMR images from the middle stage of the project. The predictionXX folders are empty - they are placeholders where you can forward the output of the models in the inference mode (script *predict.py* in the respective project folders) in order to use this data for evaluation.
 The folder **demo_data_nnunet** contains three preprocessed source NMR images for inference by *nnUnet*. When your *nnUnet* framework is installed (references to the steps on the main page), the checkpoints from the latest training can be downloaded and placed in the folder specified as *RESULTS_FOLDER* in environment variables. Then, you can segment probes with a command:
 ```sh
 nnUNet_predict -i ./data/demo_data_nnunet -o ./data/demo_data_nnunet -tr nnUNetTrainerV2 -ctr nnUNetTrainerV2CascadeFullRes -m 3d_fullres -p nnUNetPlansv2.1 -t Task580_WheatBarley
 ```
 The segmented probes can be used for analysis. However, the segmented probes are already included in the demo data for postprocessing if you want to skip segmentation.
-The command for segmenting test data
+An example of a command for segmenting demo test data
 ```sh
 nnUNet_predict -i ./data/demo_data_for_2D_models/test/source -o ./data/demo_data_for_2D_models/prediction_nnunet -tr nnUNetTrainerV2 -ctr nnUNetTrainerV2CascadeFullRes -m 3d_fullres -p nnUNetPlansv2.1 -t Task580_WheatBarley
 ```
-Please remove files *postprocessing*, *plans*, and *prediction_time* and rename the prediction files if required to match the file names of ground truth files when evaluation is performed (evaluation script requires file names to match when comparing predicted files and ground truth)
+Please remove files *postprocessing*, *plans*, and *prediction_time* and rename the prediction files if required to match the file names of ground truth files when evaluation is performed - evaluation script requires file names to match when comparing predicted files and ground truth (please mind that comparing the prediction from *nnUnet* model and from 2D/2.5D models would not be fair, as checkpoints of *nnUnet* are based on a larger dataset, while 2D/2.5D models were trained on demo set, which was much smaller in size).
 
 The **rotation_detect_data** folder contains the dataset for training the *ResNet* rotation detection model and dataloader configuration file.
 The folder **segmented_probes** contains all data used for and obtained in postprocessing, including intermediate steps. If you are going to perform postprocessing, you may remove the **analysis** subfolder and start with probes data and data description file datalist_probe.xlsx. All subsequent structures will be recreated according to the postprocessing configurations. The detailed description is in the **wheat_postprocessing** folder.
