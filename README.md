@@ -4,19 +4,19 @@ The demo data and the main segmentation model should be [downloaded separately](
 
 The folder **xp_pilot_bench** contains 2D U-net segmentation scripts for demo training and inference processing slices of 3D NMR images, in the subfolders created by Hydra configuration tool there is a result of training and checkpoints.
 The folder **xp_stacked_model_bench** contains 2.5D U-net segmentation scripts that process stacks of slices.
-These models were used on initial stage of the project when annotated data was scarce.
-**xp_pilot_bench** and **xp_stacked_model_bench** have **config** subfolder with hyperparameters used for the successful training. With *train.py* script and demo data you can see how it works. Each launch of any script creates a subfolder with logs, checkpoints and debug information, governed by the *Hydra* configuration management framework [(*about*)](https://hydra.cc/). Upon training, a quick test is performed. It can be performed separately with *metrics.py* script when respective checkpoint is specified in *config*. *predict.py* script segments sample with specified trained model checkpoint and folder where to pick up source data. These models are used only on initial stages of the project development and are placed here for observation and for the case when a similar project will be started with scarce data.
+These models were used in the initial stage of the project when annotated data was scarce.
+**xp_pilot_bench** and **xp_stacked_model_bench** have **config** subfolder with hyperparameters used for the successful training. With *train.py* script and demo data you can see how it works. Each launch of any script creates a subfolder with logs, checkpoints and debug information, governed by the *Hydra* configuration management framework [(*about*)](https://hydra.cc/). Upon training, a quick test is performed. It can be performed separately with *metrics.py* script when respective checkpoint is specified in *config*. *predict.py* script segments sample with specified trained model checkpoint and folder where to pick up source data. These models are used only in the initial stages of the project development and are placed here for observation and for the case when a similar project will be started with scarce data.
 
 The more advanced model is *nnUnet*, a 3D segmentation framework. It should be installed according to [official guidelines (version 1.0)](https://github.com/MIC-DKFZ/nnUNet/tree/nnunetv1/), including setting the environmental variables.
 Checkpoints of the trained model should be [downloaded - nnUNet.zip](https://ipk-cloud.ipk-gatersleben.de/s/5exapoJ7dbnzcTf) and unpacked in the folder specified as *RESULTS_FOLDER* in environment variables. 
 
-The folder **rotation_detect** contains auxiliary *ResNet* model which determines the rotation angle of the central slice of a grain, used to finish aligning of a grain in a 3D image. There is script for training with demo data (data should be downloaded - please refer to *data* subfolder with description). There is also a checkpoint of this model which is used in postprocessing scripts (*03_rotation_detect.py*).
+The folder **rotation_detect** contains auxiliary *ResNet* model which determines the rotation angle of the central slice of a grain, used to finish aligning of a grain in a 3D image. There is script for training with demo data (data should be downloaded - please refer to **data** subfolder with description). This model's checkpoint is also used in postprocessing scripts (*03_rotation_detect.py*).
 
 The folder **evaluation** contains script to compare segmented images with ground truth and calculate the score.
 
-The folder **wheat_postprocessing** contains script for analazing segmented data. They should be launched one by one in a sequence, guided by configuration in the Hydra file.
-Demo data is also available. It can used with a starting files only, but also contains all intermediate files produced by each script for overview. 
-In postprocessing, another neural network was involved in determining the final rotation of the seed sample. To show how it was developed and how it works, the respective code was placed in the folder rotation_detect (demo data available as well).
+The folder **wheat_postprocessing** contains the script for analyzing segmented data. They should be launched one by one in a sequence, guided by configuration in the Hydra file.
+Demo data is also available. It can used with starting files only, but also contains all intermediate files produced by each script for overview. 
+In postprocessing, another neural network was involved in determining the final rotation of the seed sample. To show how it was developed and how it works, the respective code was placed in the folder **rotation_detect** (demo data available as well).
 
 The folder **wheat_preprocessing** contains script to prepare NMR image for *nnUnet* inference. 
 
@@ -24,7 +24,7 @@ The folder **surface_area_benchmark** contains code that compares the accuracy o
 
 The **data** folder is created for the demo data that can be downloaded and unpacked after cloning this repository on the local computer.
 
-The folders **dataloader_nmr**, **inference**, **models**, **trainer** are local packages providing classes and utilities for the rest of scripts.
+The folders **dataloader_nmr**, **inference**, **models**, **trainer** are local packages providing classes and utilities for the rest of the scripts.
 
 ## Installation
 
@@ -34,10 +34,11 @@ You can create a virtual environment and install libraries with *pip install* or
 Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install PyTorch dependencies. The other few libraries are listed in the file `requirements.txt`, so they can be installed in bulk by 
 ```sh
 git clone https://github.com/akvilonBrown/mri-wizard
+cd mri-wizard
 pip install -r requirements.txt
 pip install -e .
 ```
-The last command is required for local dependencies to work across project folders and subfolders (if you preferred conda, you have to use *pip install -e* anyway whithin virtual environment to make local packages available).
+The last command is required for local dependencies to work across project folders and subfolders (if you preferred conda, you have to use *pip install -e* anyway whithin the virtual environment to make local packages available).
 Jupyter Notebook is optional, it is not required as all scripts can be run in a console.
 
 *nnUnet* can be installed in the same environment, it requires only *Pytorch* as a dependency, which is present in *MRI Wizard* dependencies (the order doesn't matter, you can install *nnUnet* prior to *MRI Wizard*).
