@@ -93,7 +93,8 @@ def get_distmap(lb, nmclosing = 30, inertia_threshold = 0.05, bestnum = None):
     
     
     voldts_cp = np.zeros_like(lb_e)
-    for cp in closest_pts:
+    # to be optimized/vectorized as voldts_cp[closest_pts[:, 0], closest_pts[:, 1], closest_pts[:, 2]] = 1
+    for cp in closest_pts:   
         voldts_cp[cp[0], cp[1], cp[2]] = 1  
 
     mrks, _ = ndi.label(voldts_cp)  # type: ignore
