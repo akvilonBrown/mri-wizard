@@ -1,4 +1,4 @@
-# MRI Wizard for seeds
+# MRI-Seed-Wizard
 This repository contains models involved in the initial development of the grain segmentation project, as well as postprocessing scripts and some benchmarks.
 The demo data and the main segmentation model should be [downloaded separately](https://ipk-cloud.ipk-gatersleben.de/s/5exapoJ7dbnzcTf), if required.
 
