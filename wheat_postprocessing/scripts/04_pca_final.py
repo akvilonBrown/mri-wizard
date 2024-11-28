@@ -128,8 +128,8 @@ def main(cfg : DictConfig) -> None:
             sfile_path_target = os.path.join(topfolder_target, folder, sfile)
             lfile_path_target = os.path.join(topfolder_target, folder, lfile)              
 
-            label = load_nifty(lfile_path_source,  dtype = np.uint8)
-            source = load_nifty(sfile_path_source, dtype = np.int16)              # type: ignore
+            label = load_nifty(lfile_path_source,  dtype = np.uint8, pad = pad)
+            source = load_nifty(sfile_path_source, dtype = np.int16, pad = pad) 
             matr, _, _ = calculate_pca(label)
             angle_rad = (structure_df.loc[di, "rad"])
             r = R.from_euler('xyz', (-angle_rad, 0, 0), degrees=False) # type: ignore
