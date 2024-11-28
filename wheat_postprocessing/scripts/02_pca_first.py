@@ -16,11 +16,14 @@ from monai.transforms.spatial.array import Affine
 logger = logging.getLogger(__name__)
 
 
-def load_nifty(source_pt, dtype = np.uint8):    
+def load_nifty(source_pt, dtype = np.uint8, pad = None):    
     img_nii = nib.load(source_pt)
     img_npt = img_nii.get_fdata(dtype=np.float32)
+    img_npt = np.squeeze(img_npt)
+    if pad is not None:
+        img_npt = np.pad(img_npt, ((pad, pad), (pad, pad), (pad, pad)), 'constant', constant_values=0)
     img_npt = img_npt.astype(dtype)
-    return np.squeeze(img_npt) #np.where(img_npt>0, 1, 0)
+    return img_npt #np.where(img_npt>0, 1, 0)
 
 def show_central_slice(array, show = True):
     cen = array.shape[0]//2
@@ -76,7 +79,10 @@ def main(cfg : DictConfig) -> None:
     topfolder_target = cfg.data.pca_firt_target
     debug = cfg.settings.pca_first.debug  
     topfolder_target_debug = cfg.data.pca_first_debug_folder
-    dochecks = cfg.settings.pca_first.dochecks 
+    dochecks = cfg.settings.pca_first.dochecks
+    pad = cfg.settings.pca_first.extra_pad
+    if pad <= 0:
+        pad = None 
 
     
     cwd = hydra.utils.get_original_cwd()
@@ -120,8 +126,8 @@ def main(cfg : DictConfig) -> None:
             sfile_path_target = os.path.join(topfolder_target, folder, sfile)
             lfile_path_target = os.path.join(topfolder_target, folder, lfile)              
 
-            label = load_nifty(lfile_path_source,  dtype = np.uint8)
-            source = load_nifty(sfile_path_source, dtype = np.int16)              # type: ignore
+            label = load_nifty(lfile_path_source,  dtype = np.uint8, pad = pad)
+            source = load_nifty(sfile_path_source, dtype = np.int16, pad = pad)              # type: ignore
             matr, _, _ = calculate_pca(label)
 
             label_aligned = rotate(label, matr, mode = "nearest", extra = rot90).astype(np.uint8)

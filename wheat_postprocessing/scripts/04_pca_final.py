@@ -17,11 +17,14 @@ from scipy.spatial.transform import Rotation as R
 logger = logging.getLogger(__name__)
 
 
-def load_nifty(source_pt, dtype = np.uint8):    
+def load_nifty(source_pt, dtype = np.uint8, pad = None):    
     img_nii = nib.load(source_pt)
     img_npt = img_nii.get_fdata(dtype=np.float32)
+    img_npt = np.squeeze(img_npt)
+    if pad is not None:
+        img_npt = np.pad(img_npt, ((pad, pad), (pad, pad), (pad, pad)), 'constant', constant_values=0)
     img_npt = img_npt.astype(dtype)
-    return np.squeeze(img_npt) #np.where(img_npt>0, 1, 0)
+    return img_npt #np.where(img_npt>0, 1, 0)
 
 def show_central_slice(array, show = True):
     cen = array.shape[0]//2
@@ -82,6 +85,9 @@ def main(cfg : DictConfig) -> None:
     debug = cfg.settings.pca_final.debug  
     topfolder_target_debug = cfg.data.pca_final_debug_folder
     dochecks = cfg.settings.pca_final.dochecks 
+    pad = cfg.settings.pca_final.extra_pad
+    if pad <= 0:
+        pad = None     
 
     
     cwd = hydra.utils.get_original_cwd()

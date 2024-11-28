@@ -54,6 +54,7 @@ settings:
   pca_first:
     debug: True # saves images of central slice, required for further analysys and final alignment(roll)
     dochecks: False # checks for mirroring and ebryo positioning and rectifies it, not required when final roll is performed afterfards
+    extra_pad: 0  # pads images before rotation in case they are too tight within existing size
   rotation_detection:
     batch_size: 16
     num_workers: 5
@@ -67,6 +68,7 @@ settings:
   pca_final:
     debug: True # saves images of central slice, required for further analysys and final alignment(roll)
     dochecks: True # checks for mirroring and ebryo positioning and rectifies it, not required when final roll is performed afterfards 
+    extra_pad: 0  # pads images before rotation in case they are too tight within existing size    
   crease_depth:
     draw_value: 230 # the grayscale value of crease depth line on illustration
     morphology_value: 100 # value for morphological operations (removing stray pixels holes, increase if the crease is detected on the side cavities)
